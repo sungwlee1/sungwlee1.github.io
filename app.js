@@ -5,7 +5,14 @@ $(document).ready(function() {
   type: 'get',
   cache: false,
   success: function(data){
-    console.log(data);
+    $(data.messages).each(function(index, value){
+        tr = $('<tr>');
+        tr.append("<td>" + (value.sender) + "</td>");
+        tr.append("<td>" + (value.subject) + "</td>");
+        tr.append("<td>" + (value.tags) + "</td>");
+        tr.append("<td>" + (value.date) + "</td>");
+        $('#emailBody').append(tr);
+    });
   }
 
  });
