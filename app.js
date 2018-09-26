@@ -7,28 +7,19 @@ function generateEmails() {
   type: 'get',
   cache: false,
   success: function(data){
-    // $(data.messages).each(function(index, value){
-    //     tr = $('<tr>');
-    //     tr.append("<td>" + (value.sender) + "</td>");
-    //     tr.append("<td>" + (value.subject) + "</td>");
-    //     tr.append("<td>" + (value.tags) + "</td>");
-    //     tr.append("<td>" + (value.date) + "</td>");
-    //     $('#emailBody').append(tr);
-    // });
 
     //Making sure ajax was successful
     console.log(data);
+    var arr1 = [];
+$.getJSON( "emails.json", function(data){
+  arr1 = data;
+  console.log(arr1);
   }
 
  });
 }
 
 //create collection of emails
-let arr1 = [];
-$.getJSON( "emails.json", function(data){
-  arr1 = data;
-  console.log(arr1);
-});
 
 
   if (arr1) {
