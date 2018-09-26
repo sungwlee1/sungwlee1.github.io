@@ -8,10 +8,11 @@ $(document).ready(function() {
   success: function(data){
     $(data.messages).each(function(index, value){
         tr = $('<tr>');
-        tr.append("<td>" + (value.sender) + "</td>");
-        tr.append("<td>" + (value.subject) + "</td>");
-        tr.append("<td>" + (value.tags) + "</td>");
-        tr.append("<td>" + (value.date) + "</td>");
+        tr.append("<td>" + "<input type='checkbox' id='myCheck'" + index +  "</td>");
+        tr.append("<td data-toggle='modal' data-id=" + index + " data-target='#emailModal'>" + (value.sender) + "</td>");
+        tr.append("<td data-toggle='modal' data-id=" + index + " data-target='#emailModal'>" + (value.subject) + "</td>");
+        tr.append("<td data-toggle='modal' data-id=" + index + " data-target='#emailModal'>" + (value.tags) + "</td>");
+        tr.append("<td data-toggle='modal' data-id=" + index + " data-target='#emailModal'>" + (value.date) + "</td>");
         $('#emailBody').append(tr);
 
         populateEmailInfo(index, value);
@@ -20,7 +21,7 @@ $(document).ready(function() {
   }
 
  });
-//     $('#emailModal').modal({
+    // $('#emailModal').modal({
 //         keyboard: true,
 //         backdrop: "static",
 //         show:false,
@@ -31,7 +32,8 @@ $(document).ready(function() {
 //         $(this).find('#orderDetails').html($('<b>' + getIdFromRow + '</b>'))
 //     });
 
-// });
+
+});
 
 function populateEmailInfo(index, value) {
   var tr;
