@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	
+
 function generateEmails() {
  $.ajax({
   url:'emails.json',
@@ -22,8 +22,14 @@ function generateEmails() {
 
  });
 }
+
 //create collection of emails
-let arr1 = generateEmails();
+let arr1 = [];
+$.getJSON( "emails.json", function(data){
+  arr1 = data;
+  console.log(arr1);
+});
+
 
   if (arr1) {
     // clone that collection into a second array
