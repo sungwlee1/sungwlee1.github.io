@@ -18,11 +18,8 @@ $(document).ready(function() {
     //Making sure ajax was successful
     console.log(data);
 
-    var arr1 = [];
-$.getJSON( "emails.json", function(data){
-  arr1 = data;
-  console.log(arr1);
-});
+    let arr1 = JSON.parse(jsonString);
+    console.log(arr1);
 
   }
 
