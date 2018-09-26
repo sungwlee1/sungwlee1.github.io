@@ -8,7 +8,7 @@ $(document).ready(function() {
   success: function(data){
     $(data.messages).each(function(index, value){
         tr = $('<tr>');
-        tr.append("<td>" + "<input type='checkbox' id='myCheck" + index +  "</td>");
+        tr.append("<td>" + "<input type='checkbox' id='" + index +  '"</td>");
         tr.append("<td data-toggle='modal' data-id=" + index + " data-target='#emailModal'>" + (value.sender) + "</td>");
         tr.append("<td data-toggle='modal' data-id=" + index + " data-target='#emailModal'>" + (value.subject) + "</td>");
         tr.append("<td data-toggle='modal' data-id=" + index + " data-target='#emailModal'>" + (value.tags) + "</td>");
@@ -18,6 +18,7 @@ $(document).ready(function() {
         tr = $('<tr>');
         tr.append("<td data-toggle='modal' data-id=" + index + " data-target='#emailModal'>" + (value.subject) + "</td>");
         tr.append("<td data-toggle='modal' data-id=" + index + " data-target='#emailModal'>" + (value.body) + "</td>");
+		$('#emailInfoBody').append(tr);
 
         // populateEmailInfo(index, data.messages);
     });
