@@ -55,29 +55,16 @@
          </div>
       </div>
 
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <h3>Subject</h3>
-        <div class="well well-sm overflow-auto">
-          <table class="table table-striped table-hover table-condensed" id="emailInfoTable">
-            <thead>
-              <tr>
-                <th>test</th>
-                <th>Body</th>
-              </tr>
-            </thead>
-            <tbody id="emailInfoBody">
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
-      </div>
+<div id="emailModal" class="modal hide fade" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+         <h3>Order</h3>
+
     </div>
-  </div>
+    <div id="orderDetails" class="modal-body"></div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
 </div>
 
 <script type="text/javascript" src="app.js"></script>
