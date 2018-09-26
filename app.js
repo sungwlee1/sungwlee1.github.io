@@ -1,29 +1,5 @@
 $(document).ready(function() {
-
-//create collection of emails
-let arr1 = generateEmails();
-
-  if (arr1) {
-    // clone that collection into a second array
-    let arr2 = [...arr1];
-    // For each member of the email arr2 collection, create a table row.
-    $.each(arr2, function(index, element) {
-      // createEmailRow() creates the DOM email row.
-      let myRow = createEmailRow(index, element);
-      // Stick that row we just created into the email table.
-      $('#emailBody').append(myRow);
-      // Add that student into the actual school info.
-      populateEmailInfo(index, element);
-    });
-  }
-
-  $('#myModal').on('show.bs.modal', function(e) {
-    var idx = $(e.relatedTarget).closest('tr').index();
-    $('#schoolModalBody tr').hide().filter('[emailIndex=' + idx + ']').show();
-  });
-  
-});
-
+	
 function generateEmails() {
  $.ajax({
   url:'emails.json',
@@ -46,6 +22,29 @@ function generateEmails() {
 
  });
 }
+//create collection of emails
+let arr1 = generateEmails();
+
+  if (arr1) {
+    // clone that collection into a second array
+    let arr2 = [...arr1];
+    // For each member of the email arr2 collection, create a table row.
+    $.each(arr2, function(index, element) {
+      // createEmailRow() creates the DOM email row.
+      let myRow = createEmailRow(index, element);
+      // Stick that row we just created into the email table.
+      $('#emailBody').append(myRow);
+      // Add that student into the actual school info.
+      populateEmailInfo(index, element);
+    });
+  }
+
+  $('#myModal').on('show.bs.modal', function(e) {
+    var idx = $(e.relatedTarget).closest('tr').index();
+    $('#schoolModalBody tr').hide().filter('[emailIndex=' + idx + ']').show();
+  });
+
+});
 
 function createEmailRow(index, obj) {
   // console.log(obj);
