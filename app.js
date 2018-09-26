@@ -15,38 +15,31 @@ $(document).ready(function() {
         tr.append("<td data-toggle='modal' data-id=" + index + " data-target='#emailModal'>" + (value.date) + "</td>");
         $('#emailBody').append(tr);
 
-        populateEmailInfo(index, data.messages);
+        tr = $('<tr>');
+        tr.append("<td data-toggle='modal' data-id=" + index + " data-target='#emailModal'>" + (value.subject) + "</td>");
+        tr.append("<td data-toggle='modal' data-id=" + index + " data-target='#emailModal'>" + (value.body) + "</td>");
+
+        // populateEmailInfo(index, data.messages);
     });
 
   }
 
  });
-    $('#emailModal').modal({
-        keyboard: true,
-        backdrop: "static",
-        show:false,
+//     $('#emailModal').modal({
+//         keyboard: true,
+//         backdrop: "static",
+//         show:false,
         
-    }).on('show', function(){
-          var getIdFromRow = $(event.target).closest('tr').data('id');
-        //make your ajax call populate email info 
-        $(this).find('#orderDetails').html($('<b>' + getIdFromRow + '</b>'))
-    });
+//     }).on('show', function(){
+//           var getIdFromRow = $(event.target).closest('tr').data('id');
+//         //make your ajax call populate email info 
+
+//     });
 
 
-});
+// });
 
-function populateEmailInfo(index, value) {
-  var tr;
-  $.each(obj, function(i, value) {
-    tr = $('<tr>', {
-      emailIndex: index
-    });
-    tr.append("<td>" + (value.subject) + "</td>");
-    tr.append("<td>" + (value.body) + "</td>");
-    $('#emailInfoBody').append(tr);
 
-  });
-}
 //create collection of emails
 // let arr1 = generateEmails();
 
@@ -59,7 +52,7 @@ function populateEmailInfo(index, value) {
 //       let myRow = createEmailRow(index, element);
 //       // Stick that row we just created into the email table.
 //       $('#emailBody').append(myRow);
-//       // Add that student into the actual school info.
+//       // Add that email into the actual email info.
 //       populateEmailInfo(index, element);
 //     });
 //   }
