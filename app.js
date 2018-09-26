@@ -18,7 +18,7 @@ $(document).ready(function() {
     //Making sure ajax was successful
     console.log(data);
 
-    let arr1 = JSON.parse(jsonString);
+    let arr1 = JSON.parse(data);
     console.log(arr1);
 
   }
