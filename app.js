@@ -10,16 +10,17 @@ function generateEmails() {
 
     //Making sure ajax was successful
     console.log(data);
-    var arr1 = [];
+let arr1 = [];
 $.getJSON( "emails.json", function(data){
   arr1 = data;
   console.log(arr1);
-  }
+});
 
  });
 }
 
 //create collection of emails
+
 
 
   if (arr1) {
