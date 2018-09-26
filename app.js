@@ -8,10 +8,10 @@ $(document).ready(function() {
   success: function(data){
     $(data.messages).each(function(index, value){
         tr = $('<tr>');
-        tr.append("<td data-toggle='modal' data-id='index' data-target='#emailModal'>" + (value.sender) + "</td>");
-        tr.append("<td data-toggle='modal' data-id='index' data-target='#emailModal'>" + (value.subject) + "</td>");
-        tr.append("<td data-toggle='modal' data-id='index' data-target='#emailModal'>" + (value.tags) + "</td>");
-        tr.append("<td data-toggle='modal' data-id='index' data-target='#emailModal'>" + (value.date) + "</td>");
+        tr.append("<td data-toggle='modal' data-id=" + index + "data-target='#emailModal'>" + (value.sender) + "</td>");
+        tr.append("<td data-toggle='modal' data-id=" + index + "data-target='#emailModal'>" + (value.subject) + "</td>");
+        tr.append("<td data-toggle='modal' data-id=" + index + "data-target='#emailModal'>" + (value.tags) + "</td>");
+        tr.append("<td data-toggle='modal' data-id=" + index + "data-target='#emailModal'>" + (value.date) + "</td>");
         $('#emailBody').append(tr);
 
         populateEmailInfo(index, value);
