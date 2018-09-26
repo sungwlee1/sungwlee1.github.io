@@ -25,6 +25,8 @@ $(document).ready(function() {
   }
 
  });
+
+ });
 //     $('#emailModal').modal({
 //         keyboard: true,
 //         backdrop: "static",
