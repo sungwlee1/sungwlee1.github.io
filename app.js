@@ -20,18 +20,18 @@ $(document).ready(function() {
   }
 
  });
-    $('#emailModal').modal({
-        keyboard: true,
-        backdrop: "static",
-        show:false,
+//     $('#emailModal').modal({
+//         keyboard: true,
+//         backdrop: "static",
+//         show:false,
         
-    }).on('show', function(){
-          var getIdFromRow = $(event.target).closest('tr').data('id');
-        //make your ajax call populate email info 
-        $(this).find('#orderDetails').html($('<b>' + getIdFromRow + '</b>'))
-    });
+//     }).on('show', function(){
+//           var getIdFromRow = $(event.target).closest('tr').data('id');
+//         //make your ajax call populate email info 
+//         $(this).find('#orderDetails').html($('<b>' + getIdFromRow + '</b>'))
+//     });
 
-});
+// });
 
 function populateEmailInfo(index, value) {
   var tr;
