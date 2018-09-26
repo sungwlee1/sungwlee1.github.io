@@ -1,27 +1,35 @@
 $(document).ready(function() {
 
-function generateEmails() {
  $.ajax({
   url:'emails.json',
   dataType:'json',
   type: 'get',
   cache: false,
   success: function(data){
+    // $(data.messages).each(function(index, value){
+    //     tr = $('<tr>');
+    //     tr.append("<td>" + (value.sender) + "</td>");
+    //     tr.append("<td>" + (value.subject) + "</td>");
+    //     tr.append("<td>" + (value.tags) + "</td>");
+    //     tr.append("<td>" + (value.date) + "</td>");
+    //     $('#emailBody').append(tr);
+    // });
 
     //Making sure ajax was successful
     console.log(data);
-let arr1 = [];
+
+    var arr1 = [];
 $.getJSON( "emails.json", function(data){
   arr1 = data;
   console.log(arr1);
 });
 
+  }
+
  });
-}
 
 //create collection of emails
-
-
+// let arr1 = generateEmails();
 
   if (arr1) {
     // clone that collection into a second array
